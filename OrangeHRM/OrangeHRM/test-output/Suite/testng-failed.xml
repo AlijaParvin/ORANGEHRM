@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="password" value="opensourcecms"/>
+  <parameter name="username" value="opensourcecms"/>
+  <listeners>
+    <listener class-name="com.qa.listeners.ListenerClass"/>
+  </listeners>
+  <test thread-count="1" name="Test">
+    <parameter name="password" value="opensourcecms"/>
+    <parameter name="username" value="opensourcecms"/>
+    <classes>
+      <class name="com.orangehrm.TestPlan">
+        <methods>
+          <include name="Login"/>
+          <include name="CreateUser"/>
+        </methods>
+      </class> <!-- com.orangehrm.TestPlan -->
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <parameter name="password" value="opensourcecms"/>
+    <parameter name="username" value="opensourcecms"/>
+    <classes>
+      <class name="com.orangehrm.TestPlan">
+        <methods>
+          <include name="CreateUser"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.orangehrm.TestPlan -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
